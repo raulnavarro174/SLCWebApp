@@ -12,6 +12,7 @@ import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.PropertySource;
 
 @SpringBootApplication
+@PropertySource("file:C:/Users/raul.navarro/properties_slc/slcwebapp.properties")
 public class SpringBootWebApplication extends SpringBootServletInitializer {
     private static final Logger log = LoggerFactory.getLogger(SpringBootWebApplication.class);
 
