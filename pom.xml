@@ -72,13 +72,6 @@
             <version>3.3.7</version>
         </dependency>
 
-        <!-- MAIL -->
-        <dependency>
-            <groupId>javax.mail</groupId>
-            <artifactId>mail</artifactId>
-            <version>1.5.0-b01</version>
-        </dependency>
-
         <!-- MySQL JDBC driver -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
