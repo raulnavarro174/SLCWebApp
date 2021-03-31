@@ -21,7 +21,7 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <start-class>com.text.SpringBootWebApplication</start-class>
+        <start-class>com.slc.SpringBootWebApplication</start-class>
     </properties>
 
     <dependencies>
