@@ -9,6 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.slc.model.Dades;
+
 @org.springframework.stereotype.Controller()
 public class Controller {
     private static final Logger log = LoggerFactory.getLogger(Controller.class);
@@ -25,6 +27,11 @@ public class Controller {
         return "login";
     }
 
-
+    @RequestMapping(value = "/sumaGol")
+    public String sumaGol (Model model) {
+        service.sumagol();
+        model.addAttribute("dades", new Dades());
+        return "home";
+    }
 
 }

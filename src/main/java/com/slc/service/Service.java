@@ -20,5 +20,9 @@ public class Service {
     @Autowired
     private MyProperties myProperties;
 
+    public void sumaGol (int id_jugador) {
+        repo.sumagol(id_jugador);
+    }
+
 
 }
