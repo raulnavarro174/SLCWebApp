@@ -1,0 +1,16 @@
+h1{
+	color:#0000FF;
+}
+
+h2{
+	color:#FF0000;
+}
+#camps {
+    max-width: 100%;
+}
+tbody {
+    font-size: 12px;
+}
+td#idvisual {
+    font-size: 7px;
+}
