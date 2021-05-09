@@ -4,7 +4,6 @@ public class Dades {
 
     private String metode;
 
-    @NoNull
     private int id_jugador;
 
     public Dades(){
