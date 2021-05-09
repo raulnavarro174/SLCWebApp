@@ -2,6 +2,7 @@ package com.slc.service;
 
 import com.slc.component.MyProperties;
 import com.slc.controller.Controller;
+import com.slc.model.Dades;
 import com.slc.repository.JugadorRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,8 +21,8 @@ public class Service {
     @Autowired
     private MyProperties myProperties;
 
-    public void sumaGol (int id_jugador) {
-        repo.sumagol(id_jugador);
+    public void main (Dades dades) {
+        repo.main(dades);
     }
 
 
