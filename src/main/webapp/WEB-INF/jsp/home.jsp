@@ -16,18 +16,25 @@
 <body>
 	<div class="container" style="margin-left: 0px;">
 		<div class="container">
-		<form>
+		<form:form action="${contextPath}/main" method="post"
+				modelAttribute="dades">
 		    <div class="col-1">
                 <label>Dorsal</label>
                 <form:input path="id_jugador" id="camps" type="number"
-                    name="id_jugador" value="${dades.getId_jugador()}" required="required"/>
+                    name="filtreId_jugador" value="${dades.getId_jugador()}" required="required"/>
             </div>
+            <div class="col-1" id="camps">
+				<label>Mètode</label> <select name="metode">
+					<c:forEach items="${listmetodes}" var="object">
+						<option value="${object.valor}"
+							${object.valor.equals(dades.metode) ? "selected" : ""}>${object.nom}</option>
+					</c:forEach>
+				</select>
+			</div>
             <div class="col-1">
-                <button class="btn btn-primary mb-2"
-                formaction="${contextPath}/sumaGol" type="submit">Gol</button>
-            </div>
-        </form>
+				<input type="SUBMIT" value="main" class="btn btn-primary mb-2" />
+			</div>
+        </form:form>
         </div>
     </div>
 </body>
-
