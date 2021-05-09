@@ -1,15 +1,23 @@
 package com.slc.controller;
 
-import com.slc.service.Service;
+import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.slc.component.Constants;
 import com.slc.model.Dades;
+import com.slc.model.Metodes;
+import com.slc.service.Service;
 
 @org.springframework.stereotype.Controller()
 public class Controller {
@@ -26,12 +34,31 @@ public class Controller {
         if (logout != null) model.addAttribute("msg", "Has sortit correctament");
         return "login";
     }
+    
+    @RequestMapping(value="/", method = RequestMethod.GET)
+    public String mainGet (ModelMap model) {
+    	log.info("Endpoint '/' --> SLCWebApp");
+    	model = getParams(model);
+    	
+    	model.addAttribute("dades", new Dades());
+    	return "home";
+    }
 
-    @RequestMapping(value = "/sumaGol")
-    public String sumaGol (Model model) {
-        service.sumagol();
-        model.addAttribute("dades", new Dades());
+    @RequestMapping(value = "/main", method = RequestMethod.POST)
+    public String mainPost (@ModelAttribute("dades") Dades dades, ModelMap model) {
+        log.info("Endpoint '/main' --> SLCWebApp");
+    	model = getParams(model);
+        service.main(dades);
+        model.addAttribute("dades", dades);
+    	
         return "home";
     }
+    
+    private ModelMap getParams(ModelMap model) {
+		List<Metodes> list = Constants.listMetodes;
+		model.addAttribute("listmetodes", list);
+
+		return model;
+	}
 
 }
