@@ -4,13 +4,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>groupId</groupId>
     <artifactId>SLCWebApp</artifactId>
     <packaging>war</packaging>
     <name>Spring Boot Web JSP Example</name>
     <description>Spring Boot Web JSP Example</description>
-
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -18,13 +16,13 @@
         <version>1.4.2.RELEASE</version>
     </parent>
 
-
     <properties>
         <java.version>1.8</java.version>
         <start-class>com.slc.SpringBootWebApplication</start-class>
     </properties>
 
     <dependencies>
+        
         <!-- Web -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -91,7 +89,6 @@
             <artifactId>spring-security-taglibs</artifactId>
             <version>5.1.5.RELEASE</version>
         </dependency>
-
     </dependencies>
 
     <build>
@@ -105,6 +102,4 @@
         </plugins>
 
     </build>
-
-
 </project>

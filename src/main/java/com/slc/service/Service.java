@@ -21,6 +21,7 @@ public class Service {
     @Autowired
     private MyProperties myProperties;
 
+
     public void main (Dades dades) {
         repo.main(dades);
     }
