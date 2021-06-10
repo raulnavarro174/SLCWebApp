@@ -31,6 +31,7 @@ public class JugadorRepository {
             log.info("Query llançada: " + query);
             int updatecount = query.executeUpdate();
             log.info("Updates fets: " + updatecount);
+            //hola bon dia
         } catch (Exception e) {
             log.error("Error query UPDATE: " + e.getLocalizedMessage());
         }

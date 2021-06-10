@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.transaction.annotation.Transactional;
 
 @org.springframework.stereotype.Service("service")
 public class Service {
@@ -21,7 +22,7 @@ public class Service {
     @Autowired
     private MyProperties myProperties;
 
-
+    @Transactional
     public void main (Dades dades) {
         repo.main(dades);
     }
