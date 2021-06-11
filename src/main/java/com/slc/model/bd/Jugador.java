@@ -29,6 +29,9 @@ public class Jugador {
 
     @Column(name = "Partits")
     private Integer partits;
+    
+    @Column(name = "Recuperacions")
+    private Integer recuperacions;
 
     public Integer getId() {
         return id;
@@ -85,4 +88,12 @@ public class Jugador {
     public void setPartits(Integer partits) {
         this.partits = partits;
     }
+
+	public Integer getRecuperacions() {
+		return recuperacions;
+	}
+
+	public void setRecuperacions(Integer recuperacions) {
+		this.recuperacions = recuperacions;
+	}
 }

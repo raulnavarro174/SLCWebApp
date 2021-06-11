@@ -26,8 +26,8 @@
             <div class="col-1" id="camps">
 				<label>Mètode</label> <select name="metode">
 					<c:forEach items="${listmetodes}" var="object">
-						<option value="${object.valor}"
-							${object.valor.equals(dades.metode) ? "selected" : ""}>${object.nom}</option>
+						<option value="${object.nom}"
+							${object.nom.equals(dades.metode) ? "selected" : ""}>${object.nom}</option>
 					</c:forEach>
 				</select>
 			</div>

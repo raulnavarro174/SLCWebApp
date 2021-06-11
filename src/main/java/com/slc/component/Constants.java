@@ -6,10 +6,8 @@ import java.util.List;
 import com.slc.model.Metodes;
 
 public class Constants {
-	public static final String SUMA_GOL_NAME = "sumaGol";
-	public static final String SUMA_GOL_VALUE = "Sumar Gol";
-
-	/*Aqui cal anar posant els mètodes creats*/
 	
-	public static final List<Metodes> listMetodes = Arrays.asList(new Metodes(SUMA_GOL_NAME, SUMA_GOL_VALUE));
+	public static final List<Metodes> listMetodes = Arrays.asList(new Metodes("gols"), new Metodes("assist"),new Metodes("xuts_porta"), new Metodes("xuts_fora"), new Metodes("perdues"), new Metodes("partits"),
+				new Metodes("recuperacions")
+			);
 }

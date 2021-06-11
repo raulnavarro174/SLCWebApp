@@ -5,15 +5,18 @@ public class Dades {
     private String metode;
 
     private int id_jugador;
+    
+    private String columnes;
 
     public Dades(){
 
     }
 
-    public Dades(String metode, int id_jugador) {
+    public Dades(String metode, int id_jugador, String columnes) {
         super();
         this.metode = metode;
         this.id_jugador = id_jugador;
+        this.columnes = columnes;
     }
 
     public String getMetode() {
@@ -32,11 +35,16 @@ public class Dades {
         this.id_jugador = id_jugador;
     }
 
-    @Override
-    public java.lang.String toString() {
-        return "Dades{" +
-                "metode='" + metode + '\'' +
-                ", id_jugador=" + id_jugador +
-                '}';
-    }
+    public String getColumnes() {
+		return columnes;
+	}
+
+	public void setColumnes(String columnes) {
+		this.columnes = columnes;
+	}
+
+	@Override
+	public String toString() {
+		return "Dades [metode=" + metode + ", id_jugador=" + id_jugador + ", columnes=" + columnes + "]";
+	}
 }
