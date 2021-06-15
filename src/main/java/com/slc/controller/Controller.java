@@ -57,6 +57,9 @@ public class Controller {
     private ModelMap getParams(ModelMap model) {
 		List<Metodes> list = Constants.listMetodes;
 		model.addAttribute("listmetodes", list);
+		
+		List<Integer> llist = Constants.jugadors;
+		model.addAttribute("jugadors", llist);
 
 		return model;
 	}
