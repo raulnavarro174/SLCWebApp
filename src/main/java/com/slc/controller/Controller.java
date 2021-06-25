@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.slc.component.Constants;
 import com.slc.model.Dades;
 import com.slc.model.Metodes;
+import com.slc.model.bd.Jugador;
 import com.slc.service.Service;
 
 @org.springframework.stereotype.Controller()
@@ -54,6 +55,15 @@ public class Controller {
         return "home";
     }
     
+    @RequestMapping("/escriu")
+	public String escriu(@ModelAttribute("dades") Dades dades, ModelMap model, HttpServletResponse response) {
+		log.info("Endpoint '/escriu' --> home");
+		List<Jugador> listJugador = service.llistarJugador();
+		model.addAttribute("resultQuery", listJugador);
+
+		return "llistarJugador";
+	}
+    
     private ModelMap getParams(ModelMap model) {
 		List<Metodes> list = Constants.listMetodes;
 		model.addAttribute("listmetodes", list);
@@ -63,5 +73,4 @@ public class Controller {
 
 		return model;
 	}
-
 }

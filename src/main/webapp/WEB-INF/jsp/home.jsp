@@ -38,6 +38,8 @@
 			</div>
             <div class="col-3">
 				<input type="SUBMIT" value="main" class="btn btn-primary mb-2" />
+				<button class="btn btn-primary mb-2"
+							formaction="${contextPath}/escriu" type="submit">Escriu</button>
 			</div>
 		</div>
         </form:form>
