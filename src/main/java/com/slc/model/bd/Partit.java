@@ -6,8 +6,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Jugador")
-public class Jugador {
+@Table(name = "Partit")
+public class Partit {
 
     @Id
     private Integer id;
@@ -26,15 +26,15 @@ public class Jugador {
 
     @Column(name = "Perdues")
     private Integer perdues;
-
-    @Column(name = "Partits")
-    private Integer partits;
     
     @Column(name = "Recuperacions")
     private Integer recuperacions;
     
     @Column(name = "Intercepcions")
     private Integer intercepcions;
+    
+    @Column(name = "gols_generats")
+    private Integer gols_generats;
 
     public Integer getId() {
         return id;
@@ -84,14 +84,6 @@ public class Jugador {
         this.perdues = perdues;
     }
 
-    public Integer getPartits() {
-        return partits;
-    }
-
-    public void setPartits(Integer partits) {
-        this.partits = partits;
-    }
-
 	public Integer getRecuperacions() {
 		return recuperacions;
 	}
@@ -106,5 +98,13 @@ public class Jugador {
 
 	public void setIntercepcions(Integer intercepcions) {
 		this.intercepcions = intercepcions;
+	}
+
+	public Integer getGols_generats() {
+		return gols_generats;
+	}
+
+	public void setGols_generats(Integer gols_generats) {
+		this.gols_generats = gols_generats;
 	}
 }

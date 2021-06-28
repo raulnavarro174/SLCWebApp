@@ -64,6 +64,14 @@ public class Controller {
 		return "llistarJugador";
 	}
     
+    @RequestMapping("/esborrapartit")
+    public String esborrapartit(ModelMap model,HttpServletResponse response) {
+    	log.info("Endpoint '/esborrapartit'");
+    	service.esborra_partit();
+    	model.addAttribute("dades", new Dades());
+    	return "home";
+    }
+    
     private ModelMap getParams(ModelMap model) {
 		List<Metodes> list = Constants.listMetodes;
 		model.addAttribute("listmetodes", list);

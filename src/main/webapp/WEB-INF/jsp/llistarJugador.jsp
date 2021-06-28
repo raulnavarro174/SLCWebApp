@@ -13,7 +13,7 @@
 </head>
 <body>
 	      
-	<h1>Jugadors</h1>
+	<h1 style="margin: 15px;">Jugadors</h1>
 	<div class="container" style="margin-left: 0px;">
 	<table class="table table-striped">
 		<thead class="thead-dark">

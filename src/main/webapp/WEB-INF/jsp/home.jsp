@@ -40,6 +40,8 @@
 				<input type="SUBMIT" value="main" class="btn btn-primary mb-2" />
 				<button class="btn btn-primary mb-2"
 							formaction="${contextPath}/escriu" type="submit">Escriu</button>
+				<button class="btn btn-primary mb-2"
+							formaction="${contextPath}/esborrapartit" type="submit">Reset</button>
 			</div>
 		</div>
         </form:form>
