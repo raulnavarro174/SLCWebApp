@@ -11,6 +11,7 @@ import com.slc.component.Constants;
 import com.slc.model.Dades;
 import com.slc.model.Metodes;
 import com.slc.model.bd.Jugador;
+import com.slc.model.bd.Partit;
 
 import java.util.List;
 
@@ -28,9 +29,13 @@ public class JugadorRepository {
     
     @Transactional("jugadorTransactionManager")
     public void main(Dades dades) {
-    	log.info("Intento sumar" + dades.getMetode() + "al dorsal " + dades.getId_jugador());
+    	log.info("Intento sumar " + dades.getMetode() + " al dorsal " + dades.getId_jugador());
         try {
-            Query query = entityManagerJugador.createQuery("UPDATE Partit p SET p." + dades.getMetode() + "= p." + dades.getMetode() + "+ 1 WHERE p.id = " + dades.getId_jugador() + " ");
+        	StringBuilder s = new StringBuilder("");
+        	log.info(dades.getMetode());
+        	if (dades.getMetode().equals("partits")) s.append("UPDATE Jugador j SET j.partits = j.partits + 1 WHERE j.id = " + dades.getId_jugador());
+        	else s.append("UPDATE Partit p SET p." + dades.getMetode() + "= p." + dades.getMetode() + "+ 1 WHERE p.id = " + dades.getId_jugador() + " ");
+            Query query = entityManagerJugador.createQuery(s.toString());
             log.info("Query llançada: " + query);
             int updatecount = query.executeUpdate();
             log.info("Updates fets: " + updatecount);
@@ -39,34 +44,33 @@ public class JugadorRepository {
         }
     }
     
-    public List<Jugador> llistarJugadors() {
-		log.info("Repo llistarJugadors connect to BBDD");
+    public List<Partit> llistarPartit() {
+		log.info("Repo llistarPartit connect to BBDD");
+		List<Partit> result = null;
+		try {
+			StringBuilder str = new StringBuilder("SELECT p FROM Partit p");
+			TypedQuery<Partit> query = null;
+			query = entityManagerJugador.createQuery(str.toString(), Partit.class);
+
+			result = query.getResultList();
+		} catch (Exception e) {
+			log.error("Error query llistarPartit: " + e.getLocalizedMessage());
+		}
+		return result;
+	}
+    
+    public List<Jugador> llistarJugador() {
+		log.info("Repo llistarJugador connect to BBDD");
 		List<Jugador> result = null;
 		try {
-			StringBuilder str = new StringBuilder("SELECT j FROM Jugador j ORDER BY j.id DESC ");
-
+			StringBuilder str = new StringBuilder("SELECT j FROM Jugador j");
 			TypedQuery<Jugador> query = null;
 			query = entityManagerJugador.createQuery(str.toString(), Jugador.class);
 
 			result = query.getResultList();
 		} catch (Exception e) {
-			log.error("Error query llistarJugadors: " + e.getLocalizedMessage());
+			log.error("Error query llistarJugador: " + e.getLocalizedMessage());
 		}
 		return result;
 	}
-    
-    @Transactional("jugadorTransactionManager")
-    public void esborra_dades_partit() {
-    	log.info("Intento tornar a 0 les dades de la taula partit");
-    	try {
-    		for (Metodes m:Constants.listMetodes) {
-    			Query query = entityManagerJugador.createQuery("UPDATE Partit p SET p." + m.getNom() + "= 0");
-                log.info("Query llançada: " + query);
-                int updatecount = query.executeUpdate();
-                log.info("Updates fets: " + updatecount);
-    		}
-        } catch (Exception e) {
-            log.error("Error query UPDATE: " + e.getLocalizedMessage());
-        }
-    }
 }
