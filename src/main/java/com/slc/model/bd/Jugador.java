@@ -35,6 +35,12 @@ public class Jugador {
     
     @Column(name = "Intercepcions")
     private Integer intercepcions;
+    
+    @Column(name = "gols_generats")
+    private Integer gols_generats;
+    
+    @Column(name = "regats")
+    private Integer regats;
 
     public Integer getId() {
         return id;
@@ -106,5 +112,21 @@ public class Jugador {
 
 	public void setIntercepcions(Integer intercepcions) {
 		this.intercepcions = intercepcions;
+	}
+
+	public Integer getGols_generats() {
+		return gols_generats;
+	}
+
+	public void setGols_generats(Integer gols_generats) {
+		this.gols_generats = gols_generats;
+	}
+
+	public Integer getRegats() {
+		return regats;
+	}
+
+	public void setRegats(Integer regats) {
+		this.regats = regats;
 	}
 }

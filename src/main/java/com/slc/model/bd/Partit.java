@@ -35,6 +35,9 @@ public class Partit {
     
     @Column(name = "gols_generats")
     private Integer gols_generats;
+    
+    @Column(name = "regats")
+    private Integer regats;
 
     public Integer getId() {
         return id;
@@ -106,5 +109,13 @@ public class Partit {
 
 	public void setGols_generats(Integer gols_generats) {
 		this.gols_generats = gols_generats;
+	}
+
+	public Integer getRegats() {
+		return regats;
+	}
+
+	public void setRegats(Integer regats) {
+		this.regats = regats;
 	}
 }

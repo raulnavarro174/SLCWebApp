@@ -18,6 +18,7 @@ import com.slc.component.Constants;
 import com.slc.model.Dades;
 import com.slc.model.Metodes;
 import com.slc.model.bd.Jugador;
+import com.slc.model.bd.Partit;
 import com.slc.service.Service;
 
 @org.springframework.stereotype.Controller()
@@ -58,19 +59,20 @@ public class Controller {
     @RequestMapping("/escriu")
 	public String escriu(@ModelAttribute("dades") Dades dades, ModelMap model, HttpServletResponse response) {
 		log.info("Endpoint '/escriu' --> home");
+		List<Partit> listPartit = service.llistarPartit();
+		model.addAttribute("resultQuery", listPartit);
+
+		return "llistarPartit";
+	}
+    
+    @RequestMapping("/escriuTemporada")
+	public String escriuTemporada(@ModelAttribute("dades") Dades dades, ModelMap model, HttpServletResponse response) {
+		log.info("Endpoint '/escriuTemporada' --> home");
 		List<Jugador> listJugador = service.llistarJugador();
 		model.addAttribute("resultQuery", listJugador);
 
-		return "llistarJugador";
+		return "llistarTemporada";
 	}
-    
-    @RequestMapping("/esborrapartit")
-    public String esborrapartit(ModelMap model,HttpServletResponse response) {
-    	log.info("Endpoint '/esborrapartit'");
-    	service.esborra_partit();
-    	model.addAttribute("dades", new Dades());
-    	return "home";
-    }
     
     private ModelMap getParams(ModelMap model) {
 		List<Metodes> list = Constants.listMetodes;
