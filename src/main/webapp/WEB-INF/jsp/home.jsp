@@ -39,9 +39,9 @@
             <div class="col-3">
 				<input type="SUBMIT" value="main" class="btn btn-primary mb-2" />
 				<button class="btn btn-primary mb-2"
-							formaction="${contextPath}/escriu" type="submit">Escriu</button>
+							formaction="${contextPath}/escriu" type="submit">Estadístiques partit</button>
 				<button class="btn btn-primary mb-2"
-							formaction="${contextPath}/esborrapartit" type="submit">Reset</button>
+							formaction="${contextPath}/escriuTemporada" type="submit">Estadístiques temporada</button>
 			</div>
 		</div>
         </form:form>

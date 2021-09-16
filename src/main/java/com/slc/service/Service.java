@@ -4,6 +4,7 @@ import com.slc.component.MyProperties;
 import com.slc.controller.Controller;
 import com.slc.model.Dades;
 import com.slc.model.bd.Jugador;
+import com.slc.model.bd.Partit;
 import com.slc.repository.JugadorRepository;
 
 import java.util.List;
@@ -31,13 +32,12 @@ public class Service {
         repo.main(dades);
     }
 
-	public List<Jugador> llistarJugador() {
-		return repo.llistarJugadors();
+	public List<Partit> llistarPartit() {
+		return repo.llistarPartit();
 	}
-	
-	@Transactional
-	public void esborra_partit( ) {
-		repo.esborra_dades_partit();
+
+	public List<Jugador> llistarJugador() {
+		return repo.llistarJugador();
 	}
 
 }
