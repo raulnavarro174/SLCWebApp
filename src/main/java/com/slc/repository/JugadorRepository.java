@@ -48,7 +48,7 @@ public class JugadorRepository {
 		log.info("Repo llistarPartit connect to BBDD");
 		List<Partit> result = null;
 		try {
-			StringBuilder str = new StringBuilder("SELECT p FROM Partit p");
+			StringBuilder str = new StringBuilder("SELECT p FROM Partit p order by p.id");
 			TypedQuery<Partit> query = null;
 			query = entityManagerJugador.createQuery(str.toString(), Partit.class);
 
@@ -63,7 +63,7 @@ public class JugadorRepository {
 		log.info("Repo llistarJugador connect to BBDD");
 		List<Jugador> result = null;
 		try {
-			StringBuilder str = new StringBuilder("SELECT j FROM Jugador j");
+			StringBuilder str = new StringBuilder("SELECT j FROM Jugador j order by j.id");
 			TypedQuery<Jugador> query = null;
 			query = entityManagerJugador.createQuery(str.toString(), Jugador.class);
 
