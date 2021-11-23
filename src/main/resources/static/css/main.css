@@ -18,3 +18,24 @@ td#idvisual {
 #row {
 	margin-top: 20px;
 }
+
+.metode_select, .dorsal_select {
+	height: auto;
+	border-color: #808080;
+	border: solid;
+	border-width: 1px;
+	padding: 5px;
+}
+
+.metode_select {
+	text-align: center;
+}
+
+.dorsal_select {
+	width: 50px;
+	text-align: center;	
+}
+
+select {
+	overflow-y: auto;
+}
