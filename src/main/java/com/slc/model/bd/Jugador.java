@@ -36,11 +36,23 @@ public class Jugador {
     @Column(name = "Intercepcions")
     private Integer intercepcions;
     
-    @Column(name = "gols_generats")
-    private Integer gols_generats;
-    
     @Column(name = "regats")
     private Integer regats;
+    
+    @Column(name = "corner_provocat")
+    private Integer corner_provocat;
+    
+    @Column(name = "falta_provocada")
+    private Integer falta_provocada;
+    
+    @Column(name = "falta_comesa")
+    private Integer falta_comesa;
+    
+    @Column(name = "gol_encaixat")
+    private Integer gol_encaixat;
+    
+    @Column(name = "aturada")
+    private Integer aturada;
 
     public Integer getId() {
         return id;
@@ -114,19 +126,51 @@ public class Jugador {
 		this.intercepcions = intercepcions;
 	}
 
-	public Integer getGols_generats() {
-		return gols_generats;
-	}
-
-	public void setGols_generats(Integer gols_generats) {
-		this.gols_generats = gols_generats;
-	}
-
 	public Integer getRegats() {
 		return regats;
 	}
 
 	public void setRegats(Integer regats) {
 		this.regats = regats;
+	}
+
+	public Integer getCorner_provocat() {
+		return corner_provocat;
+	}
+
+	public void setCorner_provocat(Integer corner_provocat) {
+		this.corner_provocat = corner_provocat;
+	}
+
+	public Integer getFalta_provocada() {
+		return falta_provocada;
+	}
+
+	public void setFalta_provocada(Integer falta_provocada) {
+		this.falta_provocada = falta_provocada;
+	}
+
+	public Integer getFalta_comesa() {
+		return falta_comesa;
+	}
+
+	public void setFalta_comesa(Integer falta_comesa) {
+		this.falta_comesa = falta_comesa;
+	}
+
+	public Integer getGol_encaixat() {
+		return gol_encaixat;
+	}
+
+	public void setGol_encaixat(Integer gol_encaixat) {
+		this.gol_encaixat = gol_encaixat;
+	}
+
+	public Integer getAturada() {
+		return aturada;
+	}
+
+	public void setAturada(Integer aturada) {
+		this.aturada = aturada;
 	}
 }

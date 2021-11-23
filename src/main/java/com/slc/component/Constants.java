@@ -9,8 +9,9 @@ public class Constants {
 	
 	public static final List<Metodes> listMetodes = Arrays.asList(new Metodes("partits"), new Metodes("gols"),
 			new Metodes("assist"), new Metodes("xuts_porta"), new Metodes("xuts_fora"), new Metodes("perdues"),
-				new Metodes("recuperacions"), new Metodes("intercepcions"), new Metodes("gols_generats"), 
-				new Metodes("regats")
+				new Metodes("recuperacions"), new Metodes("intercepcions"),	new Metodes("regats"),
+				new Metodes("corner_provocat"), new Metodes("falta_provocada"), new Metodes("falta_comesa"),
+				new Metodes("gol_encaixat"), new Metodes("aturada")
 			);
 	
 	public static final List<Integer> jugadors = Arrays.asList(1, 5, 6, 8, 9, 10, 11, 14, 15, 19, 26);
