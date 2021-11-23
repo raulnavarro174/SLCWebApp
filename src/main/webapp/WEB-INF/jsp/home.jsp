@@ -10,34 +10,35 @@
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <c:url value="/css/main.css" var="jstlCss" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/custom.js"></script>
 <link href="${jstlCss}" rel="stylesheet" />
 <title>SLC WebApp</title>
 </head>
 <body>
 	<div class="container" style="margin-left: 0px;">
 		
-		<form:form action="${contextPath}/main" method="post"
+		<form:form id="main_form" action="${contextPath}/main" method="post"
 				modelAttribute="dades">
 			<div class="row" id="row">
 		    <div class="col-3">
                 <label>Dorsal</label><br>
                 <select name="id_jugador" size="${Constants.NUM_JUGADORS }">
 					<c:forEach items="${jugadors}" var="object">
-						<option value="${object}">${object}</option>
+						<option class="dorsal_select" value="${object}">${object}</option>
 					</c:forEach>
 				</select>
             </div>
             <div class="col-3" id="camps">
 				<label>Mètode</label><br>
-				<select name="metode" size="${Constants.NUM_METODES }">
+				<select name="metode" size="${Constants.NUM_METODES}">
 					<c:forEach items="${listmetodes}" var="object">
-						<option value="${object.nom}"
+						<option class="metode_select" value="${object.nom}"
 							${object.nom.equals(dades.metode) ? "selected" : ""}>${object.nom}</option>
 					</c:forEach>
 				</select>
 			</div>
             <div class="col-3">
-				<input type="SUBMIT" value="main" class="btn btn-primary mb-2" />
 				<button class="btn btn-primary mb-2"
 							formaction="${contextPath}/escriu" type="submit">Estadístiques partit</button>
 				<button class="btn btn-primary mb-2"
