@@ -9,7 +9,7 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <c:url value="/css/main.css" var="jstlCss" />
 <link href="${jstlCss}" rel="stylesheet" />
-<title>Estadístiques individuals de l'últim partit</title>
+<title>Jornada</title>
 </head>
 <body>
 	      

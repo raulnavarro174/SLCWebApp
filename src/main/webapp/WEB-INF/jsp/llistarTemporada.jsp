@@ -9,7 +9,7 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <c:url value="/css/main.css" var="jstlCss" />
 <link href="${jstlCss}" rel="stylesheet" />
-<title>Estadístiques individuals de la temporada</title>
+<title>Temporada</title>
 </head>
 <body>
 	      
@@ -26,8 +26,8 @@
 			 <td>perdues</td>
 			 <td>recuperacions</td>
 			 <td>intercepcions</td>
-			 <td>intercepcions</td>
 			 <td>Gols generats</td>
+			 <td>Regats</td>
 			</tr>
 	</thead>
 		<%ArrayList<Jugador> lista = (ArrayList<Jugador>) request.getAttribute("resultQuery");
